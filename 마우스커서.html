@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            /* cursor: url('img/cursor.svg') 20 30, auto; */
+            cursor: default;
+        }
+        *:hover .cursor {
+            /* z-index: -1; */
+        }
+        *:hover .cursor img {
+             
+        }
+         
+        .cursor {
+            /* display: block; */
+            /* opacity: 1; */
+            position: absolute;
+            /* pointer-events: none; */
+            left: 0;
+            top: 0;
+            z-index: 1000;
+            /* transform: translate(-50%, -50%) scale(1); */
+            pointer-events: none;
+            /* 모든 이미지에서 포인터 이벤트(클릭, 드래그, 호버 등)를 비활성화한다. */
+            transition: 0.2s linear;
+        }
+        .cursor img {
+            position: fixed;
+            /* top: 50%;
+            left: 50%; */
+            transform: translate(-50%, -50%) scale(1);
+
+            opacity: 0.7; 
+            /* transition: all .2s ease-in-out; */
+        }
+        
+    </style>
+    <script>
+        window.onload = () => {
+            document.addEventListener('mousemove', (e) => {
+                let cursor = document.querySelector('.cursor');
+                let mouseX = e.pageX; // document의 x좌표값
+                let mouseY = e.pageY; // document의 y좌표값
+
+                cursor.style.left = mouseX + 'px';
+                cursor.style.top = mouseY + 'px';
+                 
+            })
+        }
+    </script>
+    
+</head>
+
+<body>
+    <div class="cursor">
+        <img src="img/mouse-image.png" alt="">
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam doloremque modi delectus velit mollitia quam
+        quaerat fugit sequi eligendi totam? Omnis, doloribus beatae enim quisquam incidunt rerum cumque aliquid
+        accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam doloremque modi delectus velit mollitia quam
+        quaerat fugit sequi eligendi totam? Omnis, doloribus beatae enim quisquam incidunt rerum cumque aliquid
+        accusantium!</p>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam doloremque modi delectus velit mollitia quam
+        quaerat fugit sequi eligendi totam? Omnis, doloribus beatae enim quisquam incidunt rerum cumque aliquid
+        accusantium!</p>
+        
+</body>
+
+</html>
